@@ -1,5 +1,5 @@
-// Generates bounds.js from the shapes in index.js. Run after editing a shape:
-// `npm run bounds`. Paths only use M/L/H/V/Z, so tracking points is enough.
+// Generates bounds.js from the shapes in index.js: `npm run generate`.
+// Paths only use M/L/H/V/Z, so tracking points is enough.
 import { writeFileSync } from "node:fs";
 import countries from "../index.js";
 

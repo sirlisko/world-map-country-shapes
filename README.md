@@ -1,14 +1,15 @@
 # world-map-country-shapes
 
-[![npm][npm-image]][npm-url] [![bundle size][size-image]][size-url] [![license][license-image]](./LICENSE)
+[![npm][npm-image]][npm-url] [![license][license-image]](https://github.com/sirlisko/world-map-country-shapes/blob/main/LICENSE)
 
-> Bring your own world map: SVG path shapes for 210 countries and territories, keyed by ISO code.
+Bring your own world map: SVG path shapes for 210 countries and territories, keyed by ISO code.
 
-**[Live demo](https://sirlisko.github.io/world-map-country-shapes/demo/)**
+[![World map][map-image]][demo-url]
 
-![World map][map-image]
+**[Try the live demo →][demo-url]**
 
 - **Just data.** No dependencies, no framework. Render with React, Vue, Svelte, plain DOM or a `<canvas>`.
+- **Small.** All 210 countries come to about 31 kB gzipped. The boxes add an optional 4.5 kB.
 - **ISO 3166-1 alpha-2 ids**, so you can join it with any country dataset.
 - **Zoom-ready boxes.** An optional `bounds` entry point gives you the box around each country and around its mainland.
 - **Typed.** TypeScript declarations included, with `CountryId` as a union of every code.
@@ -109,6 +110,8 @@ The full map is also available as a file, e.g. to load with your bundler's asset
 import mapUrl from "world-map-country-shapes/world-map.svg";
 ```
 
+Countries are grey with white borders by default. They're set as SVG attributes, so any CSS overrides them when the SVG is inlined. Each `<path>` has the country's ISO code as its `id` and its English name as `data-name`.
+
 ## API
 
 | Import | Value |
@@ -134,10 +137,10 @@ The package is ESM only.
 
 ## Contributing
 
-Shapes live in `index.js`. After editing one, regenerate the boxes and run the tests:
+Shapes live in `index.js`. `bounds.js` and `world-map.svg` are generated from it, so after editing a shape run:
 
 ```bash
-npm run bounds
+npm run generate
 npm test
 ```
 
@@ -153,11 +156,10 @@ Map from [Simplemaps](https://simplemaps.com/resources/svg-world) (MIT).
 
 ## License
 
-[MIT](./LICENSE) © Luca Lischetti
+[MIT](https://github.com/sirlisko/world-map-country-shapes/blob/main/LICENSE) © Luca Lischetti
 
-[map-image]: ./world-map.svg
+[map-image]: https://raw.githubusercontent.com/sirlisko/world-map-country-shapes/main/world-map.svg
+[demo-url]: https://sirlisko.github.io/world-map-country-shapes/demo/
 [npm-image]: https://img.shields.io/npm/v/world-map-country-shapes.svg
 [npm-url]: https://npmjs.com/package/world-map-country-shapes
-[size-image]: https://img.shields.io/bundlephobia/minzip/world-map-country-shapes
-[size-url]: https://bundlephobia.com/package/world-map-country-shapes
 [license-image]: https://img.shields.io/npm/l/world-map-country-shapes.svg
