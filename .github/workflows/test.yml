@@ -19,3 +19,14 @@ jobs:
       - run: npm test
       - name: Check bounds.js is up to date
         run: npm run bounds && git diff --exit-code bounds.js
+
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - run: npx -y publint@0.3 --strict
+      # An SVG has no type declarations; bundlers type `*.svg` imports themselves
+      - run: npx -y @arethetypeswrong/cli@0.18 --pack --profile esm-only --exclude-entrypoints world-map.svg
