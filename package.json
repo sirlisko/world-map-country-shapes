@@ -50,7 +50,7 @@
     "world-map.svg"
   ],
   "scripts": {
-    "bounds": "node scripts/bounds.js",
+    "generate": "node scripts/bounds.js && node scripts/svg.js",
     "test": "node --test",
     "prepublishOnly": "npm test"
   }

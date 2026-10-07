@@ -17,8 +17,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm test
-      - name: Check bounds.js is up to date
-        run: npm run bounds && git diff --exit-code bounds.js
 
   package:
     runs-on: ubuntu-latest
@@ -27,6 +25,9 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+      # One Node version only: country names come from its ICU data
+      - name: Check generated files are up to date
+        run: npm run generate && git diff --exit-code bounds.js world-map.svg
       - run: npx -y publint@0.3 --strict
       # An SVG has no type declarations; bundlers type `*.svg` imports themselves
       - run: npx -y @arethetypeswrong/cli@0.18 --pack --profile esm-only --exclude-entrypoints world-map.svg
