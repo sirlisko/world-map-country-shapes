@@ -1,6 +1,6 @@
 # world-map-country-shapes
 
-[![npm][npm-image]][npm-url] [![bundle size][size-image]][size-url] [![license][license-image]](https://github.com/sirlisko/world-map-country-shapes/blob/main/LICENSE)
+[![npm][npm-image]][npm-url] [![license][license-image]](https://github.com/sirlisko/world-map-country-shapes/blob/main/LICENSE)
 
 Bring your own world map: SVG path shapes for 210 countries and territories, keyed by ISO code.
 
@@ -9,6 +9,7 @@ Bring your own world map: SVG path shapes for 210 countries and territories, key
 **[Try the live demo →][demo-url]**
 
 - **Just data.** No dependencies, no framework. Render with React, Vue, Svelte, plain DOM or a `<canvas>`.
+- **Small.** All 210 countries come to about 31 kB gzipped. The boxes add an optional 4.5 kB.
 - **ISO 3166-1 alpha-2 ids**, so you can join it with any country dataset.
 - **Zoom-ready boxes.** An optional `bounds` entry point gives you the box around each country and around its mainland.
 - **Typed.** TypeScript declarations included, with `CountryId` as a union of every code.
@@ -161,6 +162,4 @@ Map from [Simplemaps](https://simplemaps.com/resources/svg-world) (MIT).
 [demo-url]: https://sirlisko.github.io/world-map-country-shapes/demo/
 [npm-image]: https://img.shields.io/npm/v/world-map-country-shapes.svg
 [npm-url]: https://npmjs.com/package/world-map-country-shapes
-[size-image]: https://deno.bundlejs.com/badge?q=world-map-country-shapes
-[size-url]: https://bundlejs.com/?q=world-map-country-shapes
 [license-image]: https://img.shields.io/npm/l/world-map-country-shapes.svg
