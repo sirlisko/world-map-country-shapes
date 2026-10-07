@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>world-map-country-shapes</title>
+		<meta name="description" content="SVG path shapes for 210 countries and territories, keyed by ISO code." />
+		<link rel="icon" href="data:," />
+		<link rel="stylesheet" href="./style.css" />
+		<!-- Lets main.js import the package by name, exactly as in the README -->
+		<script type="importmap">
+			{
+				"imports": {
+					"world-map-country-shapes": "../index.js",
+					"world-map-country-shapes/bounds": "../bounds.js"
+				}
+			}
+		</script>
+		<script type="module" src="./main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>world-map-country-shapes</h1>
+			<p>
+				SVG path shapes for 210 countries and territories, keyed by ISO code.
+				<a href="https://github.com/sirlisko/world-map-country-shapes">GitHub</a> ·
+				<a href="https://npmjs.com/package/world-map-country-shapes">npm</a>
+			</p>
+		</header>
+
+		<main>
+			<div class="controls">
+				<label>
+					Country
+					<select id="country">
+						<option value="">Whole world</option>
+					</select>
+				</label>
+				<label class="toggle">
+					<input type="checkbox" id="overseas" />
+					Include overseas parts
+				</label>
+			</div>
+
+			<figure>
+				<svg id="map" role="img" aria-label="World map"></svg>
+				<figcaption id="caption">Click a country to zoom to it.</figcaption>
+			</figure>
+
+			<pre><code id="code"></code></pre>
+		</main>
+	</body>
+</html>

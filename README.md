@@ -4,6 +4,8 @@
 
 > Bring your own world map: SVG path shapes for 210 countries and territories, keyed by ISO code.
 
+**[Live demo](https://sirlisko.github.io/world-map-country-shapes/demo/)**
+
 ![World map][map-image]
 
 - **Just data.** No dependencies, no framework. Render with React, Vue, Svelte, plain DOM or a `<canvas>`.
@@ -137,6 +139,12 @@ Shapes live in `index.js`. After editing one, regenerate the boxes and run the t
 ```bash
 npm run bounds
 npm test
+```
+
+To try the demo locally, serve the repo root with any static server and open `/demo/`:
+
+```bash
+npx serve .
 ```
 
 ## Credits

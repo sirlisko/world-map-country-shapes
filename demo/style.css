@@ -1,0 +1,112 @@
+:root {
+	--bg: #fafaf9;
+	--fg: #1c1917;
+	--muted: #78716c;
+	--land: #e7e5e4;
+	--border: #fafaf9;
+	--hover: #fdba74;
+	--selected: #ea580c;
+	--code-bg: #f5f5f4;
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #1c1917;
+		--fg: #f5f5f4;
+		--muted: #a8a29e;
+		--land: #44403c;
+		--border: #1c1917;
+		--hover: #c2410c;
+		--selected: #fb923c;
+		--code-bg: #292524;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 72rem;
+	padding: 2rem 1rem;
+	background: var(--bg);
+	color: var(--fg);
+	font: 16px/1.5 system-ui, sans-serif;
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+header p {
+	margin: 0.25rem 0 1.5rem;
+	color: var(--muted);
+}
+
+a {
+	color: inherit;
+}
+
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 2rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+label {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+select {
+	font: inherit;
+	max-width: 60vw;
+}
+
+figure {
+	margin: 0;
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 2000 / 1001;
+}
+
+path {
+	fill: var(--land);
+	stroke: var(--border);
+	stroke-width: 0.5;
+	vector-effect: non-scaling-stroke;
+	cursor: pointer;
+	transition: fill 0.15s;
+}
+
+path:hover {
+	fill: var(--hover);
+}
+
+path.selected {
+	fill: var(--selected);
+}
+
+figcaption {
+	margin-top: 0.5rem;
+	color: var(--muted);
+}
+
+pre {
+	overflow-x: auto;
+	margin: 1.5rem 0 0;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	background: var(--code-bg);
+	font-size: 0.875rem;
+}
