@@ -16,10 +16,11 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          # Trusted publishing needs npm 11.5.1+, bundled from Node 24
+          # `npm stage` needs npm 11.15+, bundled with current Node 24
           node-version: 24
           registry-url: https://registry.npmjs.org
       - name: Check the tag matches package.json
         run: test "${GITHUB_REF_NAME#v}" = "$(node -p 'require("./package.json").version')"
       - run: npm test
-      - run: npm publish
+      # Stage only: a maintainer approves the release on npmjs.com with 2FA
+      - run: npm stage publish
