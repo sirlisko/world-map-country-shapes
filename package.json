@@ -1,27 +1,57 @@
 {
   "name": "world-map-country-shapes",
-  "version": "1.0.0",
-  "description": "BYO World map country svg shapes",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "2.0.0",
+  "description": "SVG path shapes for 210 countries and territories, keyed by ISO code, plus the boxes to zoom to each one. Framework-agnostic and dependency-free.",
+  "keywords": [
+    "world-map",
+    "map",
+    "svg",
+    "countries",
+    "country",
+    "shapes",
+    "paths",
+    "geography",
+    "iso-3166",
+    "choropleth",
+    "react",
+    "robinson-projection"
+  ],
+  "homepage": "https://github.com/sirlisko/world-map-country-shapes#readme",
+  "bugs": {
+    "url": "https://github.com/sirlisko/world-map-country-shapes/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sirlisko/world-map-country-shapes.git"
   },
-  "keywords": [
-    "world",
-    "map",
-    "svg",
-    "countries",
-    "shapes",
-    "path"
-  ],
-  "author": "Luca Lischetti <luca@sirlisko.com> (https://sirlisko.com)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sirlisko/world-map-country-shapes/issues"
+  "author": "Luca Lischetti <luca@sirlisko.com> (https://sirlisko.com)",
+  "type": "module",
+  "sideEffects": false,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./bounds": {
+      "types": "./bounds.d.ts",
+      "default": "./bounds.js"
+    },
+    "./world-map.svg": "./world-map.svg",
+    "./package.json": "./package.json"
   },
-  "homepage": "https://github.com/sirlisko/world-map-country-shapes#readme"
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "bounds.js",
+    "bounds.d.ts",
+    "world-map.svg"
+  ],
+  "scripts": {
+    "bounds": "node scripts/bounds.js",
+    "test": "node --test",
+    "prepublishOnly": "npm test"
+  }
 }
