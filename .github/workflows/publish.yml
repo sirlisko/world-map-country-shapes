@@ -1,0 +1,25 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  # Trusted publishing: npm verifies this workflow via OIDC, so no NPM_TOKEN
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          # Trusted publishing needs npm 11.5.1+, bundled from Node 24
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      - name: Check the tag matches package.json
+        run: test "${GITHUB_REF_NAME#v}" = "$(node -p 'require("./package.json").version')"
+      - run: npm test
+      - run: npm publish
